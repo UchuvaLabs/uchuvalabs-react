@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineArrowLeft } from "react-icons/ai";
+import Cookies from "js-cookie";
+import { login } from "../../services/authService";
 
 interface VerifyCodeModalProps {
   onClose: () => void;
@@ -11,11 +13,34 @@ const VerifyCodeModal: React.FC<VerifyCodeModalProps> = ({
   onBack,
 }) => {
   const [code, setCode] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleVerify = () => {
-    // Aquí iría la lógica para verificar el código
-    console.log("Verifying code:", code);
-    onClose();
+  const handleVerify = async () => {
+    setLoading(true);
+    setError(""); // Limpiar errores anteriores
+    try {
+      const wallet = Cookies.get("wallet") || ""; // Obtener la dirección del wallet de la cookie, or use an empty string as default
+      // Llamar al servicio para verificar el código OTP
+      const response = await login(code, wallet);
+
+      // Guardar el token en una cookie (con tiempo de expiración)
+      Cookies.set("token", response.token.token, {
+        expires: new Date(response.expiresAt), // Establecer expiración según el backend
+        secure: true, // Para asegurar la cookie si está en HTTPS
+        sameSite: "strict", // Evitar envío de la cookie en peticiones cross-site
+      });
+      console.log(response.token.token);
+      console.log("Token guardado en la cookie:", response.token);
+
+      // Cerrar el modal después de la verificación exitosa
+      onClose();
+    } catch (err) {
+      console.error("Error al verificar el código:", err);
+      setError("Failed to verify code. Please try again.");
+    } finally {
+      setLoading(false); // Finalizar la carga
+    }
   };
 
   return (
@@ -41,7 +66,7 @@ const VerifyCodeModal: React.FC<VerifyCodeModalProps> = ({
           Enter the verification code
         </h2>
 
-        {/* Contenido del modal */}
+        {/* Input para ingresar el código OTP */}
         <input
           type="text"
           placeholder="Enter the code"
@@ -49,11 +74,15 @@ const VerifyCodeModal: React.FC<VerifyCodeModalProps> = ({
           onChange={(e) => setCode(e.target.value)}
           className="border border-gray-300 p-2 rounded w-full mb-4 bg-white text-black focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
+        {error && (
+          <p className="text-red-500 text-center mb-4">{error}</p> // Mostrar error si ocurre
+        )}
         <button
           className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-text transition-colors duration-300 w-full"
           onClick={handleVerify}
+          disabled={loading} // Desactivar el botón mientras se está procesando
         >
-          Verify
+          {loading ? "Verifying..." : "Verify"}
         </button>
       </div>
     </div>
