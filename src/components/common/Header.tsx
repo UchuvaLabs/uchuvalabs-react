@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 
-const Header = () => {
+interface HeaderProps {
+  onGetStartedClick: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
   const [scrolling, setScrolling] = useState(false);
   const [sectionOffset, setSectionOffset] = useState(0);
 
@@ -75,7 +79,10 @@ const Header = () => {
             </a>
           </li>
         </ul>
-        <button className="bg-text text-white py-2 px-4 rounded hover:bg-primary transition-colors duration-300 ml-4">
+        <button
+          className="bg-text text-white py-2 px-4 rounded hover:bg-primary transition-colors duration-300 ml-4"
+          onClick={onGetStartedClick}
+        >
           Get Started
         </button>
       </nav>
