@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineArrowLeft } from "react-icons/ai";
+import apiClient from "../../services/apiClient";
 
 interface FarmerRegisterModalProps {
   onClose: () => void;
@@ -11,28 +12,25 @@ const FarmerRegisterModal: React.FC<FarmerRegisterModalProps> = ({
   onBack,
 }) => {
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
-    wallet_address: "",
+    wallet: "",
     experiencia: "",
     certificaciones: [] as string[],
-    areaTotalCultivable: "",
+    areaTotalCultivable: 0,
     ubicacionesTierras: [] as string[],
-    historialCultivos: [] as {
-      cultivoId: string;
-      tipoCultivo: string;
-      fechaInicio: Date;
-      fechaFin: Date;
-      resumen: string;
-      rendimiento: number;
-    }[],
   });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     field: string
   ) => {
-    setFormData({ ...formData, [field]: e.target.value });
+    const value =
+      field === "areaTotalCultivable" ? Number(e.target.value) : e.target.value;
+    setFormData({ ...formData, [field]: value });
   };
 
   const handleArrayChange = (
@@ -42,9 +40,30 @@ const FarmerRegisterModal: React.FC<FarmerRegisterModalProps> = ({
     setFormData({ ...formData, [field]: e.target.value.split(",") });
   };
 
-  const handleSubmit = () => {
-    console.log("Farmer registration data:", formData);
-    onClose();
+  const handleSubmit = async () => {
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await apiClient.post(
+        "/secure/user/register/farmer",
+        formData
+      );
+
+      if (response.status !== 200) {
+        throw new Error("Failed to register. Please try again.");
+      }
+
+      const data = response.data;
+      console.log("Farmer registered:", data);
+
+      onClose();
+    } catch (error) {
+      setError((error as Error).message);
+      console.error("Error during registration:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -70,12 +89,15 @@ const FarmerRegisterModal: React.FC<FarmerRegisterModalProps> = ({
           Register as Farmer
         </h2>
 
+        {/* Mostrar error si ocurre */}
+        {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
+
         {/* Campos del formulario */}
         <input
           type="text"
-          placeholder="Name"
-          value={formData.name}
-          onChange={(e) => handleInputChange(e, "name")}
+          placeholder="Full Name"
+          value={formData.fullName}
+          onChange={(e) => handleInputChange(e, "fullName")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <input
@@ -88,8 +110,8 @@ const FarmerRegisterModal: React.FC<FarmerRegisterModalProps> = ({
         <input
           type="text"
           placeholder="Wallet Address"
-          value={formData.wallet_address}
-          onChange={(e) => handleInputChange(e, "wallet_address")}
+          value={formData.wallet}
+          onChange={(e) => handleInputChange(e, "wallet")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <input
@@ -126,8 +148,9 @@ const FarmerRegisterModal: React.FC<FarmerRegisterModalProps> = ({
           <button
             className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-text transition-colors duration-300 w-full max-w-full"
             onClick={handleSubmit}
+            disabled={loading}
           >
-            Register
+            {loading ? "Registering..." : "Register"}
           </button>
         </div>
       </div>

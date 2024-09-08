@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineArrowLeft } from "react-icons/ai";
+import { generateOtp } from "../../services/authService";
+import Cookies from "js-cookie";
 
 interface LoginModalProps {
   onVerifyIdentity: () => void;
@@ -13,11 +15,27 @@ const LoginModal: React.FC<LoginModalProps> = ({
   onBack,
 }) => {
   const [walletAddress, setWalletAddress] = useState("");
+  const [loading, setLoading] = useState(false); // Para manejar el estado de carga
+  const [error, setError] = useState(""); // Para manejar los errores
 
-  const handleSendCode = () => {
-    // Aquí iría la lógica para enviar el código
-    console.log("Send code to:", walletAddress);
-    onVerifyIdentity();
+  const handleSendCode = async () => {
+    setLoading(true); // Iniciar la carga
+    setError(""); // Limpiar errores anteriores
+    try {
+      // Llamar al servicio para generar el OTP
+      await generateOtp(walletAddress);
+      Cookies.set("wallet", walletAddress); // Guardar la dirección del wallet en una cookie
+      // Aquí puedes mostrar una notificación o mensaje de éxito si es necesario
+      console.log("OTP enviado al wallet:", walletAddress);
+
+      // Llamar a la función de verificación cuando el OTP se haya enviado correctamente
+      onVerifyIdentity();
+    } catch (err) {
+      console.error("Error al enviar el OTP:", err);
+      setError("Failed to send code. Please try again.");
+    } finally {
+      setLoading(false); // Finalizar la carga
+    }
   };
 
   return (
@@ -52,11 +70,15 @@ const LoginModal: React.FC<LoginModalProps> = ({
           onChange={(e) => setWalletAddress(e.target.value)}
           className="border border-gray-300 p-2 rounded w-full mb-4 bg-white text-black focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
+        {error && (
+          <p className="text-red-500 text-center mb-4">{error}</p> // Mostrar error si existe
+        )}
         <button
           className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-text transition-colors duration-300 w-full"
           onClick={handleSendCode}
+          disabled={loading} // Desactivar el botón mientras se está enviando la petición
         >
-          Send code
+          {loading ? "Sending..." : "Send code"}
         </button>
       </div>
     </div>
