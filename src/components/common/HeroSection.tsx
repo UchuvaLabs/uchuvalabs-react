@@ -22,7 +22,7 @@ const HeroSection = () => {
   const y = mousePosition.y / window.innerHeight - 0.5;
 
   return (
-    <section id="home" className="bg-gradient-to-b from-black to-primary min-h-screen flex items-center justify-center relative overflow-hidden px-6 md:px-12">
+    <section id="home" className="mt-4 bg-gradient-to-b from-black to-primary min-h-screen flex items-center justify-center relative overflow-hidden px-6 md:px-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
         <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0 px-4">
           <motion.h1
