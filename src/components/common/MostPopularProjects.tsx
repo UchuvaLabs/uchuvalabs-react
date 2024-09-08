@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const MostPopularProjects = () => {
+  const navigate = useNavigate();
+
   const projects = [
     {
       img: "/src/assets/images/crop-projects/maiz-dorado.jpg",
@@ -86,7 +90,10 @@ const MostPopularProjects = () => {
           })}
         </div>
         <div className="mt-10">
-          <button className="bg-accent text-text py-4 px-8 md:px-10 rounded-lg shadow-lg hover:bg-accent-dark hover:shadow-xl transition-transform duration-500 transform hover:scale-105">
+          <button
+            className="bg-accent text-text py-4 px-8 md:px-10 rounded-lg shadow-lg hover:bg-accent-dark hover:shadow-xl transition-transform duration-500 transform hover:scale-105"
+            onClick={() => navigate("/projects")}
+          >
             Explore More Crops
           </button>
         </div>

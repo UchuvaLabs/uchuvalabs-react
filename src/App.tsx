@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import DashboardLayout from "./layouts/DashboardLayout";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ProjectsPage from "./pages/ProjectsPage";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -45,6 +46,7 @@ const App: React.FC = () => {
             </DashboardLayout>
           }
         />
+        <Route path="/projects" element={<ProjectsPage />} />
       </Routes>
     </Router>
   );

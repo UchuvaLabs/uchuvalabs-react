@@ -1,8 +1,7 @@
 import { useState } from "react";
-import Header from "../components/common/Header";
-import HeroSection from "../components/common/HeroSection";
-import MostPopularProjects from "../components/common/MostPopularProjects";
-import FeaturesSection from "../components/common/FeaturesSection";
+
+import Header from "../components/projects/ProjectsHeader";
+import ProjectList from "../components/projects/ProjectList";
 import ContactSection from "../components/common/ContactSection";
 import Footer from "../components/common/Footer";
 
@@ -14,7 +13,7 @@ import FarmerRegisterModal from "../components/modals/FarmerRegisterModal";
 import InvestorRegisterModal from "../components/modals/InvestorRegisterModal";
 import AgronomistRegisterModal from "../components/modals/AgronomistRegisterModal";
 
-const LandingPage = () => {
+const ProjectsPage = () => {
   const [activeModal, setActiveModal] = useState<
     | "auth"
     | "login"
@@ -37,16 +36,11 @@ const LandingPage = () => {
     setActiveModal("agronomistRegister");
 
   const closeModal = () => setActiveModal(null);
-
   return (
-    <div className="min-h-screen">
+    <div>
       <Header onGetStartedClick={openAuthModal} />
-      <div className="pt-16">
-        <HeroSection />
-        <MostPopularProjects />
-        <FeaturesSection />
-        <ContactSection />
-      </div>
+      <ProjectList />
+      <ContactSection />
       <Footer />
 
       {activeModal === "auth" && (
@@ -94,4 +88,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default ProjectsPage;
