@@ -22,7 +22,10 @@ const HeroSection = () => {
   const y = mousePosition.y / window.innerHeight - 0.5;
 
   return (
-    <section id="home" className="mt-4 bg-gradient-to-b from-black to-primary min-h-screen flex items-center justify-center relative overflow-hidden px-6 md:px-12">
+    <section
+      id="home"
+      className="mt-4 bg-gradient-to-b from-black to-primary min-h-screen flex items-center justify-center relative overflow-hidden px-6 md:px-12"
+    >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
         <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0 px-4">
           <motion.h1
@@ -32,7 +35,7 @@ const HeroSection = () => {
             exit={{ opacity: 0, y: 50 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            Transforming Agriculture with Blockchain
+            Transformando la agricultura con Blockchain
           </motion.h1>
           <motion.p
             className="text-lg md:text-xl text-white mb-6"
@@ -41,12 +44,14 @@ const HeroSection = () => {
             exit={{ opacity: 0, y: 30 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            Innovating crop management through advanced tokenization and
-            blockchain technology.
+            Innovando la gestión de cultivos mediante la tokenización avanzada y
+            la tecnología blockchain.
           </motion.p>
-          <button className="bg-accent text-text py-3 px-6 md:px-8 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
-            Learn More
-          </button>
+          <a href="#projects">
+            <button className="bg-accent text-text py-3 px-6 md:px-8 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
+              Saber más
+            </button>
+          </a>
         </div>
 
         <div

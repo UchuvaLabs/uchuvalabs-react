@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import AvalancheWalletButton from "../wallet/AvalancheWalletButton";
 
 interface HeaderProps {
@@ -5,6 +6,7 @@ interface HeaderProps {
 }
 
 const ProjectsHeader: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
+  const navigate = useNavigate();
   return (
     <header
       className={
@@ -16,7 +18,8 @@ const ProjectsHeader: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
           <img
             src="/src/assets/images/uchuvalabs-logo-transp.png"
             alt="Uchuva Labs Logo"
-            className="h-12 w-auto mx-4 md:mx-8 lg:mx-12"
+            className="h-12 w-auto mx-4 md:mx-8 lg:mx-12 cursor-pointer"
+            {...{ onClick: () => navigate("/") }}
           />
           <a href="#project-list">
             <h1 className="text-3xl md:text-4xl font-extrabold text-accent tracking-wide">

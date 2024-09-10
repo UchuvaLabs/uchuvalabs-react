@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
               href="#home"
               className="text-white hover:text-accent cursor-pointer"
             >
-              Home
+              Inicio
             </a>
           </li>
           <li>
@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
               href="#projects"
               className="text-white hover:text-accent cursor-pointer"
             >
-              Projects
+              Cultivos
             </a>
           </li>
           <li>
@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
               href="#features"
               className="text-white hover:text-accent cursor-pointer"
             >
-              Features
+              Funciones
             </a>
           </li>
           <li>
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
               href="#contact"
               className="text-white hover:text-accent cursor-pointer"
             >
-              Contact
+              Contáctanos
             </a>
           </li>
         </ul>
@@ -83,7 +83,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
           className="bg-text text-white py-2 px-4 rounded hover:bg-primary transition-colors duration-300 ml-4"
           onClick={onGetStartedClick}
         >
-          Get Started
+          Comenzar
         </button>
       </nav>
     </header>
