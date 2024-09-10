@@ -3,21 +3,21 @@ import { faRocket, faGlobe, faLock } from "@fortawesome/free-solid-svg-icons";
 
 const features = [
   {
-    title: "High Speed",
+    title: "Alta Velocidad",
     description:
-      "Avalanche's blockchain is designed for lightning-fast transactions with incredibly low fees. Whether you're sending payments, executing smart contracts, or building dApps, you'll benefit from minimal delay and high throughput, making it ideal for high-frequency traders and developers alike.",
+      "La blockchain de Avalanche está diseñada para transacciones ultrarrápidas con tarifas increíblemente bajas. Ya sea que estés enviando pagos, ejecutando contratos inteligentes o creando dApps, te beneficiarás de una mínima demora y un alto rendimiento, lo que la hace ideal para traders de alta frecuencia y desarrolladores por igual.",
     icon: faRocket,
   },
   {
-    title: "Scalability",
+    title: "Escalabilidad",
     description:
-      "Unlike many other blockchains, Avalanche is built to scale to millions of users without compromising on performance. Its unique consensus mechanism allows it to maintain low latency and high security even as its network grows, supporting the future of decentralized finance and apps.",
+      "A diferencia de muchas otras blockchains, Avalanche está construida para escalar a millones de usuarios sin comprometer el rendimiento. Su mecanismo de consenso único le permite mantener baja latencia y alta seguridad incluso a medida que crece su red, apoyando el futuro de las finanzas descentralizadas y las aplicaciones.",
     icon: faGlobe,
   },
   {
-    title: "Security",
+    title: "Seguridad",
     description:
-      "Based on one of the most secure protocols in the industry, Avalanche guarantees the security and integrity of your data. Its decentralized architecture and strong cryptographic mechanisms ensure that all transactions are reliable and tamper-proof, providing peace of mind and trust.",
+      "Basada en uno de los protocolos más seguros de la industria, Avalanche garantiza la seguridad e integridad de tus datos. Su arquitectura descentralizada y sus sólidos mecanismos criptográficos aseguran que todas las transacciones sean confiables y a prueba de manipulaciones, proporcionando tranquilidad y confianza.",
     icon: faLock,
   },
 ];
@@ -28,13 +28,14 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         {/* Título Principal */}
         <h2 className="text-5xl font-bold text-center mb-4 tracking-widest text-accent">
-          Why Choose Avalanche?
+          ¿Por qué Avalanche?
         </h2>
         {/* Subtítulo */}
         <p className="text-center text-lg max-w-4xl mx-auto mb-12 text-gray-300">
-          Discover the core features that make Avalanche one of the most
-          innovative blockchain platforms available today. Speed, scalability,
-          and security, all in one powerful network.
+          Descubra las características principales que hacen de Avalanche una de
+          las plataformas de blockchain más innovadoras disponibles en la
+          actualidad. Velocidad, escalabilidad y seguridad, todo en una potente
+          red.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">

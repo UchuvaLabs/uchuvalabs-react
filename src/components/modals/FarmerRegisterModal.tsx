@@ -86,7 +86,7 @@ const FarmerRegisterModal: React.FC<FarmerRegisterModalProps> = ({
 
         {/* Título */}
         <h2 className="text-3xl font-bold text-white text-center mb-8">
-          Register as Farmer
+          Registro de Agricultor
         </h2>
 
         {/* Mostrar error si ocurre */}
@@ -95,35 +95,35 @@ const FarmerRegisterModal: React.FC<FarmerRegisterModalProps> = ({
         {/* Campos del formulario */}
         <input
           type="text"
-          placeholder="Full Name"
+          placeholder="Nombre completo"
           value={formData.fullName}
           onChange={(e) => handleInputChange(e, "fullName")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Correo electrónico"
           value={formData.email}
           onChange={(e) => handleInputChange(e, "email")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <input
           type="text"
-          placeholder="Wallet Address"
+          placeholder="Dirección de Wallet"
           value={formData.wallet}
           onChange={(e) => handleInputChange(e, "wallet")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <input
           type="text"
-          placeholder="Experience"
+          placeholder="Experiencia"
           value={formData.experiencia}
           onChange={(e) => handleInputChange(e, "experiencia")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <input
           type="text"
-          placeholder="Certifications (separated by commas)"
+          placeholder="Certificaciones"
           value={formData.certificaciones.join(",")}
           onChange={(e) => handleArrayChange(e, "certificaciones")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -137,7 +137,7 @@ const FarmerRegisterModal: React.FC<FarmerRegisterModalProps> = ({
         />
         <input
           type="text"
-          placeholder="Land Locations (separated by commas)"
+          placeholder="Ubicación del terreno"
           value={formData.ubicacionesTierras.join(",")}
           onChange={(e) => handleArrayChange(e, "ubicacionesTierras")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -150,7 +150,7 @@ const FarmerRegisterModal: React.FC<FarmerRegisterModalProps> = ({
             onClick={handleSubmit}
             disabled={loading}
           >
-            {loading ? "Registering..." : "Register"}
+            {loading ? "Creando cuenta..." : "Crear cuenta"}
           </button>
         </div>
       </div>

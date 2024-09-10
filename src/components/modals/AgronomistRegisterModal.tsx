@@ -58,27 +58,27 @@ const AgronomistRegisterModal: React.FC<AgronomistRegisterModalProps> = ({
         </button>
         {/* Título */}
         <h2 className="text-3xl font-bold text-white text-center mb-8">
-          Register as Agronomist
+          Registro de Agrónomo
         </h2>
 
         {/* Campos del formulario */}
         <input
           type="text"
-          placeholder="Name"
+          placeholder="Nombre completo"
           value={formData.name}
           onChange={(e) => handleInputChange(e, "name")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Correo electrónico"
           value={formData.email}
           onChange={(e) => handleInputChange(e, "email")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <input
           type="text"
-          placeholder="Wallet Address"
+          placeholder="Dirección de Wallet"
           value={formData.wallet_address}
           onChange={(e) => handleInputChange(e, "wallet_address")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -99,14 +99,14 @@ const AgronomistRegisterModal: React.FC<AgronomistRegisterModalProps> = ({
         />
         <input
           type="text"
-          placeholder="Áreas de Expertise (separadas por comas)"
+          placeholder="Áreas de Expertise"
           value={formData.areasExpertise.join(",")}
           onChange={(e) => handleArrayChange(e, "areasExpertise")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
         />
         <input
           type="text"
-          placeholder="Certificaciones (separadas por comas)"
+          placeholder="Certificaciones"
           value={formData.certificaciones.join(",")}
           onChange={(e) => handleArrayChange(e, "certificaciones")}
           className="border border-gray-300 p-2 rounded w-full mb-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -118,7 +118,7 @@ const AgronomistRegisterModal: React.FC<AgronomistRegisterModalProps> = ({
             className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-text transition-colors duration-300 w-full max-w-full"
             onClick={handleSubmit}
           >
-            Register
+            Crear cuenta
           </button>
         </div>
       </div>

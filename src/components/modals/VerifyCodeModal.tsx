@@ -63,13 +63,13 @@ const VerifyCodeModal: React.FC<VerifyCodeModalProps> = ({
 
         {/* Título */}
         <h2 className="text-3xl font-bold text-white text-center mb-8">
-          Enter the verification code
+          Ingresa el código de verificación
         </h2>
 
         {/* Input para ingresar el código OTP */}
         <input
           type="text"
-          placeholder="Enter the code"
+          placeholder="Código de verificación"
           value={code}
           onChange={(e) => setCode(e.target.value)}
           className="border border-gray-300 p-2 rounded w-full mb-4 bg-white text-black focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -82,7 +82,7 @@ const VerifyCodeModal: React.FC<VerifyCodeModalProps> = ({
           onClick={handleVerify}
           disabled={loading} // Desactivar el botón mientras se está procesando
         >
-          {loading ? "Verifying..." : "Verify"}
+          {loading ? "Verificando..." : "Verificar"}
         </button>
       </div>
     </div>

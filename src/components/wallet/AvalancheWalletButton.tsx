@@ -1,5 +1,10 @@
-import React, { useState } from "react";
-import { Avalanche, BinTools, Buffer, AVMAPI } from "avalanche";
+import { useState } from "react";
+
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
 
 const AvalancheWalletButton = () => {
   const [account, setAccount] = useState(null);
@@ -7,7 +12,6 @@ const AvalancheWalletButton = () => {
   const connectToCoreWallet = async () => {
     try {
       if (window.ethereum) {
-        const chainId = "X"; // Cambiar al ID de cadena adecuado
         const address = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
@@ -29,10 +33,10 @@ const AvalancheWalletButton = () => {
         </div>
       ) : (
         <button
-          className="bg-text text-white py-2 px-4 rounded hover:bg-primary transition-colors duration-300 ml-4"
+          className="bg-text text-white py-2 px-4 rounded hover:bg-primary transition-colors duration-300"
           onClick={connectToCoreWallet}
         >
-          Connect to Core Wallet
+          Conectar Wallet
         </button>
       )}
     </div>

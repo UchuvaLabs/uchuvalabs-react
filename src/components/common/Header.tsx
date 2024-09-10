@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "../../assets/images/uchuvalabs-logo-transp.png";
 
 interface HeaderProps {
   onGetStartedClick: () => void;
@@ -34,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
       <nav className="container mx-auto flex justify-between items-center px-4 md:px-8 lg:px-12">
         <div className="flex items-center flex-1">
           <img
-            src="/src/assets/images/uchuvalabs-logo-transp.png"
+            src={logo}
             alt="Uchuva Labs Logo"
             className="h-12 w-auto mx-4 md:mx-8 lg:mx-12"
           />
@@ -51,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
               href="#home"
               className="text-white hover:text-accent cursor-pointer"
             >
-              Home
+              Inicio
             </a>
           </li>
           <li>
@@ -59,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
               href="#projects"
               className="text-white hover:text-accent cursor-pointer"
             >
-              Projects
+              Cultivos
             </a>
           </li>
           <li>
@@ -67,7 +68,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
               href="#features"
               className="text-white hover:text-accent cursor-pointer"
             >
-              Features
+              Funciones
             </a>
           </li>
           <li>
@@ -75,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
               href="#contact"
               className="text-white hover:text-accent cursor-pointer"
             >
-              Contact
+              Contáctanos
             </a>
           </li>
         </ul>
@@ -83,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
           className="bg-text text-white py-2 px-4 rounded hover:bg-primary transition-colors duration-300 ml-4"
           onClick={onGetStartedClick}
         >
-          Get Started
+          Comenzar
         </button>
       </nav>
     </header>

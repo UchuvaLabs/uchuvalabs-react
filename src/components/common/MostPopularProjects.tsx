@@ -1,11 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
+import maizDorado from "../../assets/images/crop-projects/maiz-dorado.jpg";
+import cafe from "../../assets/images/crop-projects/cafe.jpg";
+import aguacate from "../../assets/images/crop-projects/aguacate.jpg";
+
 const MostPopularProjects = () => {
   const navigate = useNavigate();
 
   const projects = [
     {
-      img: "/src/assets/images/crop-projects/maiz-dorado.jpg",
+      img: maizDorado,
       nombreCultivo: "Maíz Dorado",
       tipoCultivo: "Cereal",
       descripcion:
@@ -15,7 +19,7 @@ const MostPopularProjects = () => {
       inversionNecesaria: 50000,
     },
     {
-      img: "/src/assets/images/crop-projects/cafe.jpg",
+      img: cafe,
       nombreCultivo: "Café Arabica",
       tipoCultivo: "Café",
       descripcion: "Café de alta calidad, cultivado en tierras volcánicas.",
@@ -24,7 +28,7 @@ const MostPopularProjects = () => {
       inversionNecesaria: 20000,
     },
     {
-      img: "/src/assets/images/crop-projects/aguacate.jpg",
+      img: aguacate,
       nombreCultivo: "Aguacate Hass",
       tipoCultivo: "Fruta",
       descripcion:
@@ -39,7 +43,7 @@ const MostPopularProjects = () => {
     <section id="projects" className="scroll-mt-5 py-16 bg-primary">
       <div className="container mx-auto text-center px-4 max-w-screen-lg">
         <h2 className="text-4xl font-bold text-white mb-10">
-          Most popular projects
+          Mejores cultivos del momento
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 gap-x-8">
           {projects.map((project, index) => {
@@ -71,17 +75,17 @@ const MostPopularProjects = () => {
                   </p>
                   <p className="text-gray-600 mb-4">{project.descripcion}</p>
                   <p className="text-gray-600 mb-1">
-                    <strong>Estimated Yield:</strong>{" "}
+                    <strong>Rendimiento estimado:</strong>{" "}
                     {project.rendimientoEstimado} kg
                   </p>
                   <p className="text-gray-600 mb-4">
-                    <strong>Investment Required:</strong> $
+                    <strong>Inversión necesaria:</strong> $
                     {project.inversionNecesaria.toLocaleString()}
                   </p>
 
                   <div className="flex justify-center">
                     <button className="bg-accent text-text py-2 px-8 w-3/4 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
-                      Invest
+                      Invertir
                     </button>
                   </div>
                 </div>
@@ -91,10 +95,10 @@ const MostPopularProjects = () => {
         </div>
         <div className="mt-10">
           <button
-            className="bg-accent text-text py-4 px-8 md:px-10 rounded-lg shadow-lg hover:bg-accent-dark hover:shadow-xl transition-transform duration-500 transform hover:scale-105"
+            className="bg-accent text-text py-4 px-8 md:px-10 rounded-lg shadow-lg hover:bg-text hover:text-white hover:shadow-xl transition-transform duration-500 transform hover:scale-105"
             onClick={() => navigate("/projects")}
           >
-            Explore More Crops
+            Ver más proyectos
           </button>
         </div>
       </div>
