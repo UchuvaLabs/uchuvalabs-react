@@ -33,14 +33,14 @@ const ProjectsHeader: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
         <div className="flex items-center space-x-4">
           <input
             type="text"
-            placeholder="Search projects..."
+            placeholder="Buscar proyectos"
             className="px-4 py-2 rounded-lg text-black"
           />
           <button
             className="bg-text text-white py-2 px-4 rounded hover:bg-primary transition-colors duration-300 ml-4"
             onClick={onGetStartedClick}
           >
-            Get Started
+            Comenzar
           </button>
           <AvalancheWalletButton />
         </div>

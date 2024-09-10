@@ -36,7 +36,7 @@ const AvalancheWalletButton = () => {
           className="bg-text text-white py-2 px-4 rounded hover:bg-primary transition-colors duration-300 ml-4"
           onClick={connectToCoreWallet}
         >
-          Connect to Core Wallet
+          Conectar Wallet
         </button>
       )}
     </div>
