@@ -1,10 +1,17 @@
 import { useState } from "react";
 import TransferAVAX from "../transactions/TransferAvax";
 
+import maizDorado from "../../assets/images/crop-projects/maiz-dorado.jpg";
+import cafe from "../../assets/images/crop-projects/cafe.jpg";
+import aguacate from "../../assets/images/crop-projects/aguacate.jpg";
+import papa from "../../assets/images/crop-projects/papa.jpg";
+import banano from "../../assets/images/crop-projects/banano.jpg";
+import cacao from "../../assets/images/crop-projects/cacao.jpg";
+
 const ProjectList = () => {
   const projects = [
     {
-      img: "/src/assets/images/crop-projects/maiz-dorado.jpg",
+      img: maizDorado,
       nombreCultivo: "Maíz Dorado",
       tipoCultivo: "Cereal",
       descripcion:
@@ -14,7 +21,7 @@ const ProjectList = () => {
       inversionNecesaria: 50000,
     },
     {
-      img: "/src/assets/images/crop-projects/cafe.jpg",
+      img: cafe,
       nombreCultivo: "Café Arabica",
       tipoCultivo: "Café",
       descripcion: "Café de alta calidad, cultivado en tierras volcánicas.",
@@ -23,7 +30,7 @@ const ProjectList = () => {
       inversionNecesaria: 20000,
     },
     {
-      img: "/src/assets/images/crop-projects/aguacate.jpg",
+      img: aguacate,
       nombreCultivo: "Aguacate Hass",
       tipoCultivo: "Fruta",
       descripcion:
@@ -33,7 +40,7 @@ const ProjectList = () => {
       inversionNecesaria: 40000,
     },
     {
-      img: "/src/assets/images/crop-projects/papa.jpg",
+      img: papa,
       nombreCultivo: "Papa Pastusa",
       tipoCultivo: "Tubérculo",
       descripcion:
@@ -43,7 +50,7 @@ const ProjectList = () => {
       inversionNecesaria: 30000,
     },
     {
-      img: "/src/assets/images/crop-projects/banano.jpg",
+      img: banano,
       nombreCultivo: "Banano Cavendish",
       tipoCultivo: "Fruta",
       descripcion:
@@ -53,7 +60,7 @@ const ProjectList = () => {
       inversionNecesaria: 60000,
     },
     {
-      img: "/src/assets/images/crop-projects/cacao.jpg",
+      img: cacao,
       nombreCultivo: "Cacao Criollo",
       tipoCultivo: "Cacao",
       descripcion:

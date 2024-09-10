@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "../../assets/images/uchuvalabs-logo-transp.png";
 
 interface HeaderProps {
   onGetStartedClick: () => void;
@@ -34,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ onGetStartedClick }) => {
       <nav className="container mx-auto flex justify-between items-center px-4 md:px-8 lg:px-12">
         <div className="flex items-center flex-1">
           <img
-            src="/src/assets/images/uchuvalabs-logo-transp.png"
+            src={logo}
             alt="Uchuva Labs Logo"
             className="h-12 w-auto mx-4 md:mx-8 lg:mx-12"
           />

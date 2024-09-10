@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+import logo from '../../assets/images/uchuvalabs-logo-transp.png';
+
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -62,7 +64,7 @@ const HeroSection = () => {
           }}
         >
           <motion.img
-            src="/src/assets/images/uchuvalabs-logo-transp.png"
+            src={logo}
             alt="3D Image"
             className="w-full max-w-xl h-auto"
             animate={{ y: [-10, 10, -10] }}

@@ -1,11 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
+import maizDorado from "../../assets/images/crop-projects/maiz-dorado.jpg";
+import cafe from "../../assets/images/crop-projects/cafe.jpg";
+import aguacate from "../../assets/images/crop-projects/aguacate.jpg";
+
 const MostPopularProjects = () => {
   const navigate = useNavigate();
 
   const projects = [
     {
-      img: "/src/assets/images/crop-projects/maiz-dorado.jpg",
+      img: maizDorado,
       nombreCultivo: "Maíz Dorado",
       tipoCultivo: "Cereal",
       descripcion:
@@ -15,7 +19,7 @@ const MostPopularProjects = () => {
       inversionNecesaria: 50000,
     },
     {
-      img: "/src/assets/images/crop-projects/cafe.jpg",
+      img: cafe,
       nombreCultivo: "Café Arabica",
       tipoCultivo: "Café",
       descripcion: "Café de alta calidad, cultivado en tierras volcánicas.",
@@ -24,7 +28,7 @@ const MostPopularProjects = () => {
       inversionNecesaria: 20000,
     },
     {
-      img: "/src/assets/images/crop-projects/aguacate.jpg",
+      img: aguacate,
       nombreCultivo: "Aguacate Hass",
       tipoCultivo: "Fruta",
       descripcion:
