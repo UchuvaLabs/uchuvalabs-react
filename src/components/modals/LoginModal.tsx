@@ -59,13 +59,13 @@ const LoginModal: React.FC<LoginModalProps> = ({
 
         {/* Título */}
         <h2 className="text-3xl font-bold text-white text-center mb-8">
-          Verify your identity
+          Verifica tu identidad
         </h2>
 
         {/* Contenido del modal */}
         <input
           type="text"
-          placeholder="Enter your wallet"
+          placeholder="Ingresa tu wallet"
           value={walletAddress}
           onChange={(e) => setWalletAddress(e.target.value)}
           className="border border-gray-300 p-2 rounded w-full mb-4 bg-white text-black focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
@@ -78,7 +78,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
           onClick={handleSendCode}
           disabled={loading} // Desactivar el botón mientras se está enviando la petición
         >
-          {loading ? "Sending..." : "Send code"}
+          {loading ? "Enviando..." : "Enviar código"}
         </button>
       </div>
     </div>
