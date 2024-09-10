@@ -36,7 +36,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
 
         {/* Título */}
         <h2 className="text-3xl font-bold text-white text-center mb-8">
-          I want to register as
+          Registrarme cómo
         </h2>
 
         {/* Botones de registro */}
@@ -45,19 +45,19 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
             className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-text transition-colors duration-300"
             onClick={onFarmerRegister}
           >
-            Farmer
+            Agricultor
           </button>
           <button
             className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-text transition-colors duration-300"
             onClick={onInvestorRegister}
           >
-            Investor
+            Inversionista
           </button>
           <button
             className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-text transition-colors duration-300"
             onClick={onAgronomistRegister}
           >
-            Agronomist
+            Agrónomo
           </button>
         </div>
       </div>
