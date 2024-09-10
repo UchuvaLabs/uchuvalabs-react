@@ -95,7 +95,7 @@ const MostPopularProjects = () => {
         </div>
         <div className="mt-10">
           <button
-            className="bg-accent text-text py-4 px-8 md:px-10 rounded-lg shadow-lg hover:bg-accent-dark hover:shadow-xl transition-transform duration-500 transform hover:scale-105"
+            className="bg-accent text-text py-4 px-8 md:px-10 rounded-lg shadow-lg hover:bg-text hover:text-white hover:shadow-xl transition-transform duration-500 transform hover:scale-105"
             onClick={() => navigate("/projects")}
           >
             Ver más proyectos
