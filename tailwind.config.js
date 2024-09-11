@@ -13,7 +13,7 @@ export default {
         text: "#1B512D",
         accent: "#B1CF5F",
         black: "#000000", // Negro
-        darkGray: "#2F2F2F", // Gris oscuro
+        darkGray: "#4A4A4A",
       },
       transitionProperty: {
         shadow: "box-shadow",
