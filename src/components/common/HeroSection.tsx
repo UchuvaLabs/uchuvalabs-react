@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-import logo from '../../assets/images/uchuvalabs-logo-transp.png';
+import logo from "../../assets/images/uchuvalabs-logo-transp.png";
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -40,7 +40,7 @@ const HeroSection = () => {
             Transformando la agricultura con Blockchain
           </motion.h1>
           <motion.p
-            className="text-lg md:text-xl text-white mb-6"
+            className="text-lg md:text-xl text-white mb-6 max-w-[34rem]" // Ajusta el max-width aquí
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 30 }}
@@ -49,6 +49,7 @@ const HeroSection = () => {
             Innovando la gestión de cultivos mediante la tokenización avanzada y
             la tecnología blockchain.
           </motion.p>
+
           <a href="#projects">
             <button className="bg-accent text-text py-3 px-6 md:px-8 rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
               Saber más
